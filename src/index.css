@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --padding-top: 100px;
+  --light-grey: #f8f8f8;
+  --primary: #2d94cd;
+  --secondary: rgba(12, 60, 133, 0.8);
+  --white: #fdfdfd;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 0) {
+  body {
+    padding-top: calc(var(--padding-top) / 2);
+  }
+
+  #root {
+    min-height: calc(100vh - (var(--padding-top) / 2));
+  }
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    padding-top: var(--padding-top);
+  }
+
+  #root {
+    min-height: calc(100vh - var(--padding-top));
+  }
+}
