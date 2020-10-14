@@ -1,5 +1,5 @@
 import React from 'react';
-import Contato from '../../components/Contato';
+import Contact from '../../components/Contact';
 import PageDefault from '../../components/PageDefault';
 import BannerMain from './components/BannerMain';
 import FeatureList from './components/FeatureList';
@@ -18,7 +18,7 @@ const Home = () => {
     },
     {
       id: 2,
-      logo: <FeatureLogoGrafico />, 
+      logo: <FeatureLogoGrafico />,
       title: 'Saiba para onde vai o seu dinheiro',
       description: 'Com nosso app você tem como analisar as suas finanças.',
     },
@@ -35,7 +35,7 @@ const Home = () => {
       <PageButtonCadastro>
         <ButtonLink to="/cadastro" large>Cadastre-se</ButtonLink>
       </PageButtonCadastro>
-      <Contato />
+      <Contact />
     </PageDefault>
   );
 };

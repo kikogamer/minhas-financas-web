@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import Card from '../Card';
 
-const ContactForm = styled(Card)`
-  background: rgba(12, 60, 133, 0.2);
+const FormContainer = styled(Card)`
+  background: #ececec;
   border: 1px solid var(--secondary);
   
   margin: 0 auto;
   margin-bottom: 20px;
-  padding: 10px 20px;
+  padding: 10px 10px 10px 40px;
   
   @media screen and (min-width: 0) {
     width: 100%;
@@ -18,12 +18,12 @@ const ContactForm = styled(Card)`
   }  
 `;
 
-ContactForm.Enviar = styled.div`
-margin-bottom: 10px;
+FormContainer.Enviar = styled.div`
+  margin-bottom: 10px;
   text-align: center;
 `;
 
-ContactForm.Title = styled.h3`
+FormContainer.Title = styled.h3`
   color: var(--secondary);
   font-weight: bold;
   margin-bottom: 10px;
@@ -39,4 +39,4 @@ ContactForm.Title = styled.h3`
   }
 `;
 
-export default ContactForm;
+export default FormContainer;
