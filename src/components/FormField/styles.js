@@ -6,7 +6,26 @@ export const FormFieldWrapper = styled.div`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.div`
+  display: flex;
+`;
+
+Input.Container = styled.div`
+  margin-bottom: 20px;
+  margin-top: 5px;
+  width: 100%;
+`;
+
+Input.ErrorMessage = styled.span`
+  color: #595959;
+  font-size: 1.2em;
+  font-weight: 400;
+  font-family: Roboto;
+  font-style: italic;
+  letter-spacing: 0.03333em;
+`;
+
+Input.Field = styled.input`
   background: var(--white);
   color: var(--secondary);
   display: block;
@@ -16,25 +35,35 @@ export const Input = styled.input`
   
   outline: 0;
   border: 0;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid var(--secondary);
-  
+    
+  margin-bottom: 5px;
   padding: 0 16px;
-  margin-bottom: 20px;
-  margin-top: 5px;
   
   resize: none;
   border-radius: 4px;
 
-  transition: border-color .3s;
+  ${(props) => (props.hasError && 'border: 1px solid var(--danger); box-shadow: 0 0 0.3em var(--danger);')}
+  
+  &:invalid {
+    box-shadow: none;
+  }
 
-  &:focus {
-    border-bottom-color: var(--primary);
+  &:-moz-submit-invalid {
+    box-shadow: none;
+  }
+
+  &:-moz-ui-invalid {
+    box-shadow:none;
   }
 `;
 
-export const Label = styled.label`
-  
+Input.IconError = styled.div`
+  color: var(--danger);
+  min-width: 48px;
+  padding: 15px 10px;
+`;
+
+export const Label = styled.label`  
 `;
 
 Label.Text = styled.span`
