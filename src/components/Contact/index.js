@@ -1,20 +1,20 @@
 import React from 'react';
 import Button from '../Button';
+import FormContainer from '../FormContainer';
 import FormField from '../FormField';
-import ContactForm from './styles';
 
-const Contato = () => (
-  <ContactForm>
+const Contact = () => (
+  <FormContainer>
     <form>
-      <ContactForm.Title>Contato</ContactForm.Title>
+      <FormContainer.Title>Contato</FormContainer.Title>
       <FormField label="Nome" name="name" />
       <FormField label="Email" name="email" type="email" />
       <FormField label="Mensagem" name="message" type="textarea" />
-      <ContactForm.Enviar>
+      <FormContainer.Enviar>
         <Button type="button" large>Enviar Contato</Button>
-      </ContactForm.Enviar>
+      </FormContainer.Enviar>
     </form>
-  </ContactForm>
+  </FormContainer>
 );
 
-export default Contato;
+export default Contact;

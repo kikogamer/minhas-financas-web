@@ -9,6 +9,7 @@
   --primary: #2d94cd;
   --secondary: rgba(12, 60, 133, 0.8);
   --white: #fdfdfd;
+  --danger: #f44336;
 }
 
 #root {
