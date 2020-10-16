@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import Alert from '../../components/Alert';
@@ -8,6 +8,7 @@ import FormField from '../../components/FormField';
 import PageDefault from '../../components/PageDefault';
 import { Api, GetApiError } from '../../services/api';
 import setFormErrors from '../../services/errors';
+import LoadingContext from '../../contexts/LoadingContext';
 
 const SignUp = () => {
   const {
@@ -16,8 +17,12 @@ const SignUp = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [validationMessage, setValidationMessage] = useState('');
   const history = useHistory();
+  const { showLoading, hideLoading } = useContext(LoadingContext);
 
   const OnSubmit = (data) => {
+    setShowAlert(false);
+    showLoading('Criando usuário...');
+
     const params = { user: data };
 
     Api.post('/users', params)
@@ -32,7 +37,8 @@ const SignUp = () => {
           setValidationMessage(responseError.messages.join(','));
           setShowAlert(true);
         }
-      });
+      })
+      .finally(() => hideLoading());
   };
 
   return (
