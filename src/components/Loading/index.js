@@ -3,8 +3,7 @@ import Spinner from 'react-spinkit';
 import PropTypes from 'prop-types';
 import Loader from './styles';
 
-const Loading = ({ loading, message }) => {
-  return loading ? (
+const Loading = ({ loading, message }) => loading ? (
     <Loader>
       <Loader.Wrapper>
         <Spinner name="ball-spin-fade-loader" fadeIn="none" color="steelblue" />
