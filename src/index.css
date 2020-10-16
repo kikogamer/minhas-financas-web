@@ -27,6 +27,11 @@
   }
 }
 
+.sk-spinner.pacman > div:nth-child(n+3):nth-child(-n+5) {
+  color: white;
+  z-index: -1;
+}
+
 @media screen and (min-width: 768px) {
   body {
     padding-top: var(--padding-top);
