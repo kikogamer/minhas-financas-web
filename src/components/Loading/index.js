@@ -3,17 +3,16 @@ import Spinner from 'react-spinkit';
 import PropTypes from 'prop-types';
 import Loader from './styles';
 
-const Loading = ({ loading, message }) => loading ? (
-    <Loader>
-      <Loader.Wrapper>
-        <Spinner name="ball-spin-fade-loader" fadeIn="none" color="steelblue" />
-        <Loader.Message>
-          {message}
-        </Loader.Message>
-      </Loader.Wrapper>
-    </Loader>
-  ) : null;
-};
+const Loading = ({ loading, message }) => (loading ? (
+  <Loader>
+    <Loader.Wrapper>
+      <Spinner name="ball-spin-fade-loader" fadeIn="none" color="steelblue" />
+      <Loader.Message>
+        {message}
+      </Loader.Message>
+    </Loader.Wrapper>
+  </Loader>
+) : null);
 
 Loading.defaultProps = {
   message: 'Carregando...',
