@@ -7,7 +7,7 @@ const FormContainer = styled(Card)`
   
   margin: 0 auto;
   margin-bottom: 20px;
-  padding: 10px 10px 10px 40px;
+  padding: 10px;
   
   @media screen and (min-width: 0) {
     width: 100%;
@@ -16,6 +16,10 @@ const FormContainer = styled(Card)`
   @media screen and (min-width: 768px) {
     width: 65%;
   }  
+`;
+
+FormContainer.Fields = styled.div`
+  padding-left: 40px;
 `;
 
 FormContainer.Enviar = styled.div`
@@ -31,11 +35,11 @@ FormContainer.Title = styled.h3`
   text-align: center;
   
   @media screen and (min-width: 0) {
-    font-size: 1em;
+    font-size: 1.75em;
   }
 
   @media screen and (min-width: 768px) {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 `;
 
