@@ -81,6 +81,6 @@ const SignIn = () => {
       </FormContainer>
     </PageDefault>
   );
-}
+};
 
 export default SignIn;
