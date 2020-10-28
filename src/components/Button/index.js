@@ -11,7 +11,7 @@ const Button = styled.button`
   
   @media screen and (min-width: 0) {
     font-size: ${(props) => (props.large ? '0.8em' : '0.5em')};
-    height: ${(props) => (props.large && '25px')}; 
+    height: ${(props) => (props.large && '30px')}; 
     margin: 2px;
     padding: 5px 0;
     width: ${(props) => (props.large ? '50%' : '60px')};
