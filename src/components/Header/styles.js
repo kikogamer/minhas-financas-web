@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const HeaderContainer = styled.header`
+const HeaderContainer = styled.header`
   align-items: center;
   background-color: var(--primary);
   color: var(--white);
@@ -24,7 +24,7 @@ export const HeaderContainer = styled.header`
   }
 `;
 
-export const HeaderLink = styled(Link)`
+HeaderContainer.Link = styled(Link)`
   font-weight: bold;
   margin: 10px;
 
@@ -41,7 +41,7 @@ export const HeaderLink = styled(Link)`
   }
 `;
 
-export const HeaderTitle = styled.h1`
+HeaderContainer.Title = styled.h1`
   font-weight: bold;
 
   @media screen and (min-width: 0) {
@@ -52,3 +52,8 @@ export const HeaderTitle = styled.h1`
     font-size: 2em;
   }
 `;
+
+HeaderContainer.UserInfo = styled.div`
+`;
+
+export default HeaderContainer;
