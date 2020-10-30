@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { isAuthenticated, logout } from '../../services/auth';
+import getUserInfo from '../../services/user';
 import ButtonLink from '../ButtonLink';
 import DropDown from '../DropDown';
 import DropDownItem from '../DropDown/components/DropDownItem';
@@ -9,8 +10,20 @@ import DropDownToggle from '../DropDown/components/DropDownToggle';
 import HeaderContainer from './styles';
 
 const Header = () => {
+  const [userInfo, setUserInfo] = useState({});
   const history = useHistory();
   const isLoggedIn = isAuthenticated();
+
+  async function updateUserInfo() {
+    const user = await getUserInfo();
+    setUserInfo(user);
+  }
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      updateUserInfo();
+    }
+  }, [isLoggedIn]);
 
   const handleLogout = () => {
     logout();
@@ -27,7 +40,7 @@ const Header = () => {
           isLoggedIn
             ? (
               <DropDown>
-                <DropDownToggle>[[UserName]]</DropDownToggle>
+                <DropDownToggle>{userInfo && userInfo.name}</DropDownToggle>
                 <DropDownMenu>
                   <DropDownItem>
                     <Link to="/profile">Alterar Profile</Link>

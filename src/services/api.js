@@ -1,7 +1,17 @@
 import axios from 'axios';
+import { getToken } from './auth';
 
 export const api = axios.create({
   baseURL: process.env.REACT_APP_API_ADDRESS,
+});
+
+api.interceptors.request.use(async (config) => {
+  const token = getToken();
+  if (token) {
+    // eslint-disable-next-line no-param-reassign
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
 });
 
 export const GetApiError = (error) => {
