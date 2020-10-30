@@ -9,7 +9,7 @@ import Alert from '../../components/Alert';
 import { api, GetApiError } from '../../services/api';
 import LoadingContext from '../../contexts/LoadingContext';
 import setFormErrors from '../../services/errors';
-import login from '../../services/auth';
+import { login } from '../../services/auth';
 
 const SignIn = () => {
   const {

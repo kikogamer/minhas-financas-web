@@ -9,7 +9,7 @@ import PageDefault from '../../components/PageDefault';
 import { api, GetApiError } from '../../services/api';
 import setFormErrors from '../../services/errors';
 import LoadingContext from '../../contexts/LoadingContext';
-import login from '../../services/auth';
+import { login } from '../../services/auth';
 
 const SignUp = () => {
   const {
