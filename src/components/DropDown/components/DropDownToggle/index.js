@@ -15,8 +15,12 @@ const DropDownToggle = ({ children }) => {
   );
 };
 
+DropDownToggle.defaultProps = {
+  children: null,
+};
+
 DropDownToggle.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default DropDownToggle;
