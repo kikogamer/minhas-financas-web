@@ -18,6 +18,31 @@ const FormContainer = styled(Card)`
   }  
 `;
 
+FormContainer.Alert = styled.span`
+  color: var(--danger);
+  display: inline-block;
+  font-weight: bold;
+  padding-bottom: 30px;
+  text-align: center;
+  width: 100%;
+  
+  @media screen and (min-width: 0) {
+    font-size: 0.655em;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 0.9em;
+  }
+
+  @media screen and (min-width: 992px) {
+    font-size: 1.2em;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 1.45em;
+  }
+`;
+
 FormContainer.Fields = styled.div`
   padding-left: 40px;
 `;

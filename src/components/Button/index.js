@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Button = styled.button`
-  background: var(--secondary);
+  background: ${(props) => (props.background ? props.background : 'var(--secondary)')};
   border: none;
   border-radius: 10px;
   color: var(--white);

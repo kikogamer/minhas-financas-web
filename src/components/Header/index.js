@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { isAuthenticated, logout } from '../../services/auth';
-import getUserInfo from '../../services/user';
+import UserInfoContext from '../../contexts/UserInfoContext';
+import { logout } from '../../services/auth';
 import ButtonLink from '../ButtonLink';
 import DropDown from '../DropDown';
 import DropDownItem from '../DropDown/components/DropDownItem';
@@ -10,20 +10,8 @@ import DropDownToggle from '../DropDown/components/DropDownToggle';
 import HeaderContainer from './styles';
 
 const Header = () => {
-  const [userInfo, setUserInfo] = useState({});
   const history = useHistory();
-  const isLoggedIn = isAuthenticated();
-
-  async function updateUserInfo() {
-    const user = await getUserInfo();
-    setUserInfo(user);
-  }
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      updateUserInfo();
-    }
-  }, [isLoggedIn]);
+  const { isLoggedIn, userInfo } = useContext(UserInfoContext);
 
   const handleLogout = () => {
     logout();
@@ -43,7 +31,7 @@ const Header = () => {
                 <DropDownToggle>{userInfo && userInfo.name}</DropDownToggle>
                 <DropDownMenu>
                   <DropDownItem>
-                    <Link to="/profile">Alterar Profile</Link>
+                    <Link to="/excluir-conta">Excluir Conta</Link>
                   </DropDownItem>
                   <DropDownItem divider />
                   <DropDownItem onClick={handleLogout}>
